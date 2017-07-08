@@ -7,13 +7,11 @@ pipeline {
             }
         }
     }
-   stages {
         stage('Test') {
             steps {
                 bat 'py.test --junitxml results.xml trial.py'
             }
         }
-    }
     post {
         always {
             junit 'results.xml'

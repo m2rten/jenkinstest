@@ -6,7 +6,7 @@ pipeline {
                 bat 'python --version'
             }
         }
-    }
+   
         stage('Test') {
             steps {
                 bat 'py.test --junitxml results.xml trial.py'
@@ -16,5 +16,6 @@ pipeline {
         always {
             junit 'results.xml'
         }
+         }
     }
 }
